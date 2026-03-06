@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Neurociência do Vício - Entenda como seu cérebro funciona">
+    <title>Neurociência do Vício - Guerra ao Vício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            border-bottom: 1px solid #ff000020;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header span {
+            color: #ff0000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: #ff0000;
+        }
+        
+        .sub {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .download-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .download-desc {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .info-section {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff0000;
+        }
+        
+        .info-section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff5555;
+        }
+        
+        .info-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .info-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .info-section li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.5;
+            border-top: 1px solid #333;
+        }
+
+        /* REMOVER SELEÇÃO DE TEXTO E TRACINHO DE DIGITAÇÃO */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Padrão */
+    
+    /* Remove o cursor de texto/piscar */
+    caret-color: transparent;   /* Remove o tracinho de digitação */
+}
+
+/* EXCEÇÕES - CASO QUEIRA PERMITIR SELEÇÃO EM ALGUM LOCAL ESPECÍFICO */
+input, textarea, .permitir-selecao {
+    -webkit-user-select: text;  /* Permite seleção */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    
+    caret-color: auto;          /* Restaura o cursor normal */
+}
+
+/* REMOVER QUALQUER MARCAÇÃO DE SELEÇÃO */
+::selection {
+    background: transparent;    /* Remove fundo azul da seleção */
+    color: inherit;             /* Mantém a cor do texto */
+}
+
+::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* REMOVER O CURSOR DE TEXTO DE TODOS OS ELEMENTOS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    caret-color: transparent;
+}
+
+/* PARA NAVEGADORES QUE AINDA MOSTRAM O CURSOR */
+:focus {
+    outline: 0 !important;      /* Remove outline ao focar */
+    caret-color: transparent !important;
+}
+
+/* BLOQUEAR CLIQUE COM BOTÃO DIREITO (OPCIONAL) */
+body {
+    -webkit-touch-callout: none; /* Desabilita menu no iOS */
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><span>⚔️</span> GUERRA AO VÍCIO</a>
+    </div>
+    
+    <div class="container">
+        <h1>🧠 NEUROCIÊNCIA DO <span class="red-text">VÍCIO</span></h1>
+        <p class="sub">Entenda como a pornografia sequestra seu cérebro</p>
+
+            <div class="download-card">
+            <div class="download-icon">📘</div>
+            <div class="download-title">GUIA COMPLETO</div>
+            <div class="download-desc">Adquira agora o ebook com toda a neurociência por trás do vício e como reverter os danos. + SITE VIP</div>
+            <a href="index.html#comprar" class="download-btn"> 📥DESBLOQUEAR </a>
+        </div>
+        
+        <div class="info-section">
+            <h2>🔬 O QUE ACONTECE NO SEU CÉREBRO?</h2>
+            <p><span class="highlight">Dopamina:</span> A pornografia libera quantidades massivas de dopamina, o neurotransmissor do prazer. Com o tempo, seus receptores ficam dessensibilizados.</p>
+            <p><span class="highlight">DeltaFosB:</span> Proteína que se acumula com o uso repetido, literalmente reconfigurando seu cérebro para buscar mais estímulo.</p>
+            <p><span class="highlight">Córtex pré-frontal:</span> Área responsável pelo autocontrole enfraquece. Você perde a capacidade de dizer "não".</p>
+        </div>
+        
+        <div class="info-section">
+            <h2>⚡ OS 3 ESTÁGIOS DA DEPENDÊNCIA</h2>
+            <ul>
+                <li><span class="highlight">1. Reforço positivo:</span> Você busca prazer. É "gostoso".</li>
+                <li><span class="highlight">2. Reforço negativo:</span> Você consome para aliviar a ansiedade e o desconforto.</li>
+                <li><span class="highlight">3. Reforço compulsivo:</span> Você consome mesmo sem vontade, só pelo hábito enraizado.</li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <h2>💊 RECUPERAÇÃO É POSSÍVEL</h2>
+            <p>A neuroplasticidade permite que seu cérebro se reconfigure. Em média, 21 dias de abstinência começam a restaurar receptores de dopamina. 90 dias para uma recuperação significativa.</p>
+            <p>O método <span class="highlight">Guerra ao Vício</span> acelera esse processo com técnicas baseadas em estudos da UCLA e Cambridge.</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Voltar para página inicial</a>
+    </div>
+    
+    <div class="footer">
+        Todos os direitos reservados © GUERRA AO VÍCIO 2025
+    </div>
+    
+    <script>
+        // Simula download tracking
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            console.log('Download Neurociência - tracking');
+            // Aqui você pode adicionar pixel ou evento
+        });
+    </script>
+</body>
+</html>

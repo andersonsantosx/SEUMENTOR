@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Guia da Testosterona - Aumente seus níveis naturais">
+    <title>Guia da Testosterona - Guerra ao Vício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            border-bottom: 1px solid #ff000020;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header span {
+            color: #ff0000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: #ff0000;
+        }
+        
+        .sub {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .download-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .download-desc {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .info-section {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff0000;
+        }
+        
+        .info-section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff5555;
+        }
+        
+        .info-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .food-item {
+            background-color: #222;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid #444;
+        }
+        
+        .food-item .emoji {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.5;
+            border-top: 1px solid #333;
+        }
+
+        /* REMOVER SELEÇÃO DE TEXTO E TRACINHO DE DIGITAÇÃO */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Padrão */
+    
+    /* Remove o cursor de texto/piscar */
+    caret-color: transparent;   /* Remove o tracinho de digitação */
+}
+
+/* EXCEÇÕES - CASO QUEIRA PERMITIR SELEÇÃO EM ALGUM LOCAL ESPECÍFICO */
+input, textarea, .permitir-selecao {
+    -webkit-user-select: text;  /* Permite seleção */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    
+    caret-color: auto;          /* Restaura o cursor normal */
+}
+
+/* REMOVER QUALQUER MARCAÇÃO DE SELEÇÃO */
+::selection {
+    background: transparent;    /* Remove fundo azul da seleção */
+    color: inherit;             /* Mantém a cor do texto */
+}
+
+::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* REMOVER O CURSOR DE TEXTO DE TODOS OS ELEMENTOS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    caret-color: transparent;
+}
+
+/* PARA NAVEGADORES QUE AINDA MOSTRAM O CURSOR */
+:focus {
+    outline: 0 !important;      /* Remove outline ao focar */
+    caret-color: transparent !important;
+}
+
+/* BLOQUEAR CLIQUE COM BOTÃO DIREITO (OPCIONAL) */
+body {
+    -webkit-touch-callout: none; /* Desabilita menu no iOS */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><span>⚔️</span> GUERRA AO VÍCIO</a>
+    </div>
+    
+    <div class="container">
+        <h1>⚡ GUIA DA <span class="red-text">TESTOSTERONA</span></h1>
+        <p class="sub">Aumente seus níveis naturais com alimentos e hábitos</p>
+        
+        <div class="download-card">
+            <div class="download-icon">📊</div>
+            <div class="download-title">GUIA COMPLETO</div>
+            <div class="download-desc">Adquira agora nosso site personalizado com dieta completa, treinos e suplementação para maximizar sua testosterona.</div>
+            <a href="index.html#comprar" class="download-btn"> 📥DESBLOQUEAR </a>
+        </div>
+        
+        <div class="info-section">
+            <h2>🔥 O QUE DESTRÓI SUA TESTOSTERONA</h2>
+            <ul>
+                <li>❌ <span class="highlight">Pornografia:</span> Ejaculação frequente reduz receptores de andrógenos</li>
+                <li>❌ <span class="highlight">Sono ruim:</span> Menos de 6h reduz testosterona em até 30%</li>
+                <li>❌ <span class="highlight">Estresse crônico:</span> Cortisol é antagonista da testosterona</li>
+                <li>❌ <span class="highlight">Álcool e ultraprocessados</span></li>
+                <li>❌ <span class="highlight">Sedentarismo</span></li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <h2>🥩 TOP 10 ALIMENTOS TESTOSTERONA</h2>
+            <div class="food-grid">
+                <div class="food-item"><span class="emoji">🥚</span> Ovos (gema)</div>
+                <div class="food-item"><span class="emoji">🥩</span> Carne vermelha</div>
+                <div class="food-item"><span class="emoji">🦪</span> Ostras (zinco)</div>
+                <div class="food-item"><span class="emoji">🥦</span> Brócolis</div>
+                <div class="food-item"><span class="emoji">🥑</span> Abacate</div>
+                <div class="food-item"><span class="emoji">🌰</span> Castanhas</div>
+                <div class="food-item"><span class="emoji">🐟</span> Salmão</div>
+                <div class="food-item"><span class="emoji">🧄</span> Alho</div>
+                <div class="food-item"><span class="emoji">🍫</span> Chocolate 70%+</div>
+                <div class="food-item"><span class="emoji">🍌</span> Banana</div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>💪 HÁBITOS QUE EXPLODEM SUA TESTOSTERONA</h2>
+            <ul>
+                <li>✅ <span class="highlight">Treino pesado:</span> Agachamento, levantamento terra, supino</li>
+                <li>✅ <span class="highlight">Exposição ao sol:</span> Vitamina D = testosterona</li>
+                <li>✅ <span class="highlight">Sono profundo:</span> 7-9h, mesmo horário</li>
+                <li>✅ <span class="highlight">Contato visual:</span> Acredite, aumenta dominância e testosterona</li>
+                <li>✅ <span class="highlight">Banho gelado:</span> Estimula produção</li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <h2>📈 O QUE ESPERAR EM 30 DIAS</h2>
+            <p><span class="highlight">Semana 1:</span> Mais energia, disposição matinal</p>
+            <p><span class="highlight">Semana 2:</span> Aumento de libido, voz mais firme</p>
+            <p><span class="highlight">Semana 3:</span> Ganhos na academia, menos gordura</p>
+            <p><span class="highlight">Semana 4:</span> Confiança explodindo, mudança perceptível</p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Voltar para página inicial</a>
+    </div>
+    
+    <div class="footer">
+        Todos os direitos reservados © GUERRA AO VÍCIO 2025
+    </div>
+</body>
+</html>

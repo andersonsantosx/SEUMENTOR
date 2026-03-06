@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Aplicativos Bloqueadores - Blindagem digital contra pornografia">
+    <title>Apps Bloqueadores - Guerra ao Vício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            border-bottom: 1px solid #ff000020;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header span {
+            color: #ff0000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: #ff0000;
+        }
+        
+        .sub {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .download-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .download-desc {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .app-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #333;
+        }
+        
+        .app-icon {
+            font-size: 40px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .app-info {
+            flex: 1;
+        }
+        
+        .app-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .app-info p {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .app-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background-color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+        
+        .tag-free {
+            background-color: #00aa00;
+        }
+        
+        .tag-paid {
+            background-color: #aa5500;
+        }
+        
+        .app-link {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .app-link:hover {
+            background-color: #cc0000;
+        }
+        
+        .platform-section {
+            margin: 30px 0 20px;
+        }
+        
+        .platform-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ff0000;
+            padding-bottom: 5px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.5;
+            border-top: 1px solid #333;
+        }
+
+        /* REMOVER SELEÇÃO DE TEXTO E TRACINHO DE DIGITAÇÃO */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Padrão */
+    
+    /* Remove o cursor de texto/piscar */
+    caret-color: transparent;   /* Remove o tracinho de digitação */
+}
+
+/* EXCEÇÕES - CASO QUEIRA PERMITIR SELEÇÃO EM ALGUM LOCAL ESPECÍFICO */
+input, textarea, .permitir-selecao {
+    -webkit-user-select: text;  /* Permite seleção */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    
+    caret-color: auto;          /* Restaura o cursor normal */
+}
+
+/* REMOVER QUALQUER MARCAÇÃO DE SELEÇÃO */
+::selection {
+    background: transparent;    /* Remove fundo azul da seleção */
+    color: inherit;             /* Mantém a cor do texto */
+}
+
+::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* REMOVER O CURSOR DE TEXTO DE TODOS OS ELEMENTOS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    caret-color: transparent;
+}
+
+/* PARA NAVEGADORES QUE AINDA MOSTRAM O CURSOR */
+:focus {
+    outline: 0 !important;      /* Remove outline ao focar */
+    caret-color: transparent !important;
+}
+
+/* BLOQUEAR CLIQUE COM BOTÃO DIREITO (OPCIONAL) */
+body {
+    -webkit-touch-callout: none; /* Desabilita menu no iOS */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><span>⚔️</span> GUERRA AO VÍCIO</a>
+    </div>
+    
+    <div class="container">
+        <h1>📱 APLICATIVOS <span class="red-text">BLOQUEADORES</span></h1>
+        <p class="sub">Lista completa de apps pra blindar seu celular e computador</p>
+        
+        <div class="download-card">
+            <div class="download-icon">📋</div>
+            <div class="download-title">LISTA COMPLETA</div>
+            <div class="download-desc">Adquira nosso site com links diretos, instruções de configuração e combinações avançadas.</div>
+            <a href="index.html#comprar" class="download-btn"> 📥DESBLOQUEAR </a>
+        </div>
+        
+        <div class="warning-box" style="background-color:#ff000020; border:1px solid #ff0000; border-radius:10px; padding:15px; margin-bottom:30px;">
+            ⚠️ INSTALE ANTES DA VONTADE VOLTAR. Depois que a vontade vem, você desinstala. Instale AGORA.
+        </div>
+        
+        <div class="platform-section">
+            <h2 class="platform-title">🤖 ANDROID</h2>
+            
+            <div class="app-card">
+                <div class="app-icon">🛡️</div>
+                <div class="app-info">
+                    <h3>BlockHero</h3>
+                    <p>Bloqueia sites e apps por categorias. Interface simples e eficaz.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Bloqueador</span>
+                    </div>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.blockerhero&pcampaignid=web_share" class="app-link">INSTALAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🔒</div>
+                <div class="app-info">
+                    <h3>Detoxify</h3>
+                    <p>Bloqueia conteúdo adulto com senha que outra pessoa define (você não sabe).</p>
+                    <div class="app-tags">
+                        <span class="tag tag-paid">PAGO</span>
+                        <span class="tag">Senha cega</span>
+                    </div>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.detoxify&pcampaignid=web_share" class="app-link">INSTALAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🚫</div>
+                <div class="app-info">
+                    <h3>Freedom</h3>
+                    <p>Bloqueia apps e sites em todos os dispositivos sincronizados.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-paid">PAGO</span>
+                        <span class="tag">Multi-plataforma</span>
+                    </div>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=to.freedom.android2&pcampaignid=web_share" class="app-link" >INSTALAR</a>
+            </div>
+        </div>
+        
+        <div class="platform-section">
+            <h2 class="platform-title">🍎 IPHONE / iOS</h2>
+            
+            <div class="app-card">
+                <div class="app-icon">📵</div>
+                <div class="app-info">
+                    <h3>Screen Time (nativo)</h3>
+                    <p>Use o Tempo de Uso do iOS. Peça pra alguém colocar senha que você não sabe.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Nativo</span>
+                    </div>
+                </div>
+                <a href="#" class="app-link" onclick="alert('Acesse Cofiguraçoes > Tempo de Uso')">CONFIGURAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🔐</div>
+                <div class="app-info">
+                    <h3>Lockdown</h3>
+                    <p>Bloqueia sites e apps com firewall e controle parental avançado.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Firewall</span>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/lockdown-block-apps-focus/id6745404084" class="app-link" >INSTALAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🚧</div>
+                <div class="app-info">
+                    <h3>1Blocker</h3>
+                    <p>Bloqueador de sites adulto por DNS. Muito eficiente.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-paid">PAGO</span>
+                        <span class="tag">DNS</span>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/1blocker-ad-blocker/id1365531024" class="app-link" >INSTALAR</a>
+            </div>
+        </div>
+        
+        <div class="platform-section">
+            <h2 class="platform-title">💻 PC / MAC</h2>
+            
+            <div class="app-card">
+                <div class="app-icon">🌐</div>
+                <div class="app-info">
+                    <h3>Pluckeye</h3>
+                    <p>Bloqueador nível hardcore. Tem delay para desativar (impossível agir no impulso).</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Delay</span>
+                    </div>
+                </div>
+                <a href="https://www.pluckeye.net/" class="app-link">INSTALAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🛑</div>
+                <div class="app-info">
+                    <h3>Covenant Eyes</h3>
+                    <p>Monitora e envia relatório para um parceiro de confiança. Funciona em todos dispositivos.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-paid">PAGO</span>
+                        <span class="tag">Monitoramento</span>
+                    </div>
+                </div>
+                <a href="https://www.covenanteyes.com/" class="app-link" >INSTALAR</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🔞</div>
+                <div class="app-info">
+                    <h3>Cold Turkey</h3>
+                    <p>Bloqueia sites e programas. Versão gratuita já é poderosa.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Programas</span>
+                    </div>
+                </div>
+                <a href="https://getcoldturkey.com/" class="app-link">INSTALAR</a>
+            </div>
+        </div>
+        
+        <div class="platform-section">
+            <h2 class="platform-title">🛡️ DNS BLOQUEADOR (roteador)</h2>
+            
+            <div class="app-card">
+                <div class="app-icon">🌍</div>
+                <div class="app-info">
+                    <h3>OpenDNS FamilyShield</h3>
+                    <p>Altera o DNS do roteador. Bloqueia pornô em TODOS os dispositivos da rede.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">Rede toda</span>
+                    </div>
+                </div>
+                <a href="#" class="app-link" onclick="alert('DNS: 208.67.222.123 e 208.67.220.123')">VER DNS</a>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🚀</div>
+                <div class="app-info">
+                    <h3>Cloudflare 1.1.1.3</h3>
+                    <p>DNS da Cloudflare que bloqueia malware e conteúdo adulto.</p>
+                    <div class="app-tags">
+                        <span class="tag tag-free">GRÁTIS</span>
+                        <span class="tag">1.1.1.3</span>
+                    </div>
+                </div>
+                <a href="#" class="app-link" onclick="alert('DNS: 1.1.1.3 e 1.0.0.3')">VER DNS</a>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link">← Voltar para página inicial</a>
+    </div>
+    
+    <div class="footer">
+        Todos os direitos reservados © GUERRA AO VÍCIO 2025
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Desafio 7 Dias - Primeira semana do protocolo Guerra ao Vício">
+    <title>Desafio 7 Dias - Guerra ao Vício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            border-bottom: 1px solid #ff000020;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header span {
+            color: #ff0000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: #ff0000;
+        }
+        
+        .sub {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .download-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .download-desc {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .day-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff0000;
+            position: relative;
+        }
+        
+        .day-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background-color: #ff0000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .day-card h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+        
+        .day-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .day-task {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+            border-left: 2px solid #ff5555;
+        }
+        
+        .warning-box {
+            background-color: #ff000020;
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.5;
+            border-top: 1px solid #333;
+        }
+
+        /* REMOVER SELEÇÃO DE TEXTO E TRACINHO DE DIGITAÇÃO */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Padrão */
+    
+    /* Remove o cursor de texto/piscar */
+    caret-color: transparent;   /* Remove o tracinho de digitação */
+}
+
+/* EXCEÇÕES - CASO QUEIRA PERMITIR SELEÇÃO EM ALGUM LOCAL ESPECÍFICO */
+input, textarea, .permitir-selecao {
+    -webkit-user-select: text;  /* Permite seleção */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    
+    caret-color: auto;          /* Restaura o cursor normal */
+}
+
+/* REMOVER QUALQUER MARCAÇÃO DE SELEÇÃO */
+::selection {
+    background: transparent;    /* Remove fundo azul da seleção */
+    color: inherit;             /* Mantém a cor do texto */
+}
+
+::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* REMOVER O CURSOR DE TEXTO DE TODOS OS ELEMENTOS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    caret-color: transparent;
+}
+
+/* PARA NAVEGADORES QUE AINDA MOSTRAM O CURSOR */
+:focus {
+    outline: 0 !important;      /* Remove outline ao focar */
+    caret-color: transparent !important;
+}
+
+/* BLOQUEAR CLIQUE COM BOTÃO DIREITO (OPCIONAL) */
+body {
+    -webkit-touch-callout: none; /* Desabilita menu no iOS */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><span>⚔️</span> GUERRA AO VÍCIO</a>
+    </div>
+    
+    <div class="container">
+        <h1>🔥 DESAFIO <span class="red-text">7 DIAS</span></h1>
+        <p class="sub">Primeira semana do protocolo para testar grátis</p>
+        
+        <div class="download-card">
+            <div class="download-icon">📋</div>
+            <div class="download-title">DESAFIO 7 DIAS</div>
+            <div class="download-desc">Adquira nosso site completo com todos os 7 dias detalhados, checklists e espaço para anotações.</div>
+            <a href="index.html#comprar" class="download-btn"> 📥DESBLOQUEAR </a>
+        </div>
+        
+        <div class="warning-box">
+            <strong>⚠️ REGRA DE OURO:</strong> Não pode ver pornô. Não pode se tocar. 7 dias. Só assim funciona.
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 1</div>
+            <h3>💣 DETOX INICIAL</h3>
+            <p>Remova todos os gatilhos. Apague histórico, desinstale apps, bloqueie sites. Hoje é guerra contra o acesso.</p>
+            <div class="day-task">✅ TAREFA: Instalar bloqueador (ver página de apps) e limpar tudo</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 2</div>
+            <h3>🧠 RECONHECENDO GATILHOS</h3>
+            <p>Anote cada vez que sentir vontade. Identifique o que desencadeou: tédio, estresse, solidão, horário.</p>
+            <div class="day-task">✅ TAREFA: Anotar 3 gatilhos principais no caderno</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 3</div>
+            <h3>⚡ CANALIZAÇÃO ENERGÉTICA</h3>
+            <p>A energia que iria pro vício precisa ir pra algum lugar. Treino pesado hoje. Suor elimina vontade.</p>
+            <div class="day-task">✅ TAREFA: 30 minutos de exercício intenso (qualquer um)</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 4</div>
+            <h3>🚿 CHOQUE TÉRMICO</h3>
+            <p>Banho frio ao acordar. Aumenta dopamina natural, testosterona e quebra o ciclo de preguiça.</p>
+            <div class="day-task">✅ TAREFA: 3 minutos de banho gelado pela manhã</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 5</div>
+            <h3>📵 JEJUM DIGITAL</h3>
+            <p>Fique 4 horas sem celular. Nada de rede social. Aprenda a ficar sozinho com seus pensamentos.</p>
+            <div class="day-task">✅ TAREFA: 4h sem telas (de uma vez ou dividido)</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 6</div>
+            <h3>📖 PROPÓSITO</h3>
+            <p>Escreva: POR QUE você quer parar? O que vai ganhar? O que vai perder se continuar?</p>
+            <div class="day-task">✅ TAREFA: 1 página escrita à mão sobre seu "porquê"</div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-number">DIA 7</div>
+            <h3>🎯 CELEBRAÇÃO E PLANO</h3>
+            <p>Você venceu 7 dias. Agora planeje os próximos 7. Reforce estratégias que funcionaram.</p>
+            <div class="day-task">✅ TAREFA: Comprar o protocolo completo de 21 dias</div>
+        </div>
+        
+        <a href="index.html" class="back-link">← Voltar para página inicial</a>
+    </div>
+    
+    <div class="footer">
+        Todos os direitos reservados © GUERRA AO VÍCIO 2025
+    </div>
+</body>
+</html>

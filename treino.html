@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Treino de Energia - Canalize a abstinência em força física">
+    <title>Treino de Energia - Guerra ao Vício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #0f0f0f;
+            padding: 15px 0;
+            border-bottom: 1px solid #ff000020;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .header span {
+            color: #ff0000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: #ff0000;
+        }
+        
+        .sub {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .download-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .download-desc {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .download-btn {
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .workout-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        
+        .workout-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .workout-icon {
+            font-size: 40px;
+            background-color: #222;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .workout-header h3 {
+            font-size: 20px;
+        }
+        
+        .workout-desc {
+            margin-bottom: 15px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .exercise-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .exercise-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .exercise-list li:before {
+            content: "⚔️";
+            color: #ff0000;
+        }
+        
+        .workout-tip {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            border-left: 2px solid #ff5555;
+        }
+        
+        .phase-title {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            color: #ff5555;
+        }
+        
+        .warning-box {
+            background-color: #ff000020;
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            opacity: 0.5;
+            border-top: 1px solid #333;
+        }
+
+        /* REMOVER SELEÇÃO DE TEXTO E TRACINHO DE DIGITAÇÃO */
+* {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Padrão */
+    
+    /* Remove o cursor de texto/piscar */
+    caret-color: transparent;   /* Remove o tracinho de digitação */
+}
+
+/* EXCEÇÕES - CASO QUEIRA PERMITIR SELEÇÃO EM ALGUM LOCAL ESPECÍFICO */
+input, textarea, .permitir-selecao {
+    -webkit-user-select: text;  /* Permite seleção */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    
+    caret-color: auto;          /* Restaura o cursor normal */
+}
+
+/* REMOVER QUALQUER MARCAÇÃO DE SELEÇÃO */
+::selection {
+    background: transparent;    /* Remove fundo azul da seleção */
+    color: inherit;             /* Mantém a cor do texto */
+}
+
+::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* REMOVER O CURSOR DE TEXTO DE TODOS OS ELEMENTOS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    caret-color: transparent;
+}
+
+/* PARA NAVEGADORES QUE AINDA MOSTRAM O CURSOR */
+:focus {
+    outline: 0 !important;      /* Remove outline ao focar */
+    caret-color: transparent !important;
+}
+
+/* BLOQUEAR CLIQUE COM BOTÃO DIREITO (OPCIONAL) */
+body {
+    -webkit-touch-callout: none; /* Desabilita menu no iOS */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><span>⚔️</span> GUERRA AO VÍCIO</a>
+    </div>
+    
+    <div class="container">
+        <h1>💪 TREINO DE <span class="red-text">ENERGIA</span></h1>
+        <p class="sub">Rotina de exercícios pra canalizar a abstinência em força física</p>
+        
+        <div class="download-card">
+            <div class="download-icon">📋</div>
+            <div class="download-title">PROGRAMA COMPLETO</div>
+            <div class="download-desc">Veja nossa lista de treinos exclusivas, cronograma de 30 dias e vídeos demonstrativos. + SITE VIP</div>
+            <a href="#" class="download-btn" onclick="alert('DOWNLOAD SIMULADO: Treino de Energia.pdf')">📥 DESBLOQUEAR</a>
+        </div>
+        
+        <div class="warning-box">
+            💥 TESTOSTERONA EXPLODE COM EXERCÍCIO PESADO. A energia que iria pro vício vai pro músculo.
+        </div>
+        
+        <h2 class="phase-title">⚡ NÍVEL INICIANTE (em casa)</h2>
+        
+        <div class="workout-card">
+            <div class="workout-header">
+                <div class="workout-icon">🏠</div>
+                <h3>TREINO A - CORPO INTEIRO</h3>
+            </div>
+            <div class="workout-desc">Sem equipamento. Basta um espaço de 2m². 3x por semana (seg, qua, sex).</div>
+            <ul class="exercise-list">
+                <li>Flexão de braço - 4x até a falha</li>
+                <li>Agachamento - 4x20 repetições</li>
+                <li>Afundo alternado - 3x12 cada perna</li>
+                <li>Prancha - 3x até o limite (segundos)</li>
+                <li>Polichinelo - 3x1 minuto</li>
+            </ul>
+            <div class="workout-tip">💡 Dica: Faça em circuito, sem descanso entre exercícios. Descanso de 2 minutos entre voltas.</div>
+        </div>
+        
+        <h2 class="phase-title">🔥 NÍVEL INTERMEDIÁRIO (academia)</h2>
+        
+        <div class="workout-card">
+            <div class="workout-header">
+                <div class="workout-icon">🏋️</div>
+                <h3>TREINO B - FORÇA E TESTOSTERONA</h3>
+            </div>
+            <div class="workout-desc">Exercícios compostos. Foco em cargas pesadas e explosão.</div>
+            <ul class="exercise-list">
+                <li>Agachamento livre - 4x8-10 repetições</li>
+                <li>Supino reto - 4x8-10</li>
+                <li>Puxada frontal - 4x8-10</li>
+                <li>Desenvolvimento militar - 3x10</li>
+                <li>Remada curvada - 4x8</li>
+                <li>Stiff - 3x12</li>
+            </ul>
+            <div class="workout-tip">💡 Dica: Levante pesado. 70-80% da sua carga máxima. Testosterona responde à tensão mecânica.</div>
+        </div>
+        
+        <h2 class="phase-title">💀 NÍVEL AVANÇADO (HIIT + cardio)</h2>
+        
+        <div class="workout-card">
+            <div class="workout-header">
+                <div class="workout-icon">💨</div>
+                <h3>TREINO C - EXPLOSÃO E RESISTÊNCIA</h3>
+            </div>
+            <div class="workout-desc">Pra matar a ansiedade e queimar energia acumulada.</div>
+            <ul class="exercise-list">
+                <li>Sprint 30s (descanso 60s) - 8x</li>
+                <li>Pular corda - 5 rounds de 2 minutos</li>
+                <li>Burpee - 3x15 repetições</li>
+                <li>Mountain climber - 3x30 segundos</li>
+                <li>Kettlebell swing - 4x15 (se tiver)</li>
+            </ul>
+            <div class="workout-tip">💡 Dica: HIIT queima o cortisol e libera dopamina natural. Melhor remédio pra fissura.</div>
+        </div>
+        
+        <h2 class="phase-title">🧘 RECUPERAÇÃO</h2>
+        
+        <div class="workout-card">
+            <div class="workout-header">
+                <div class="workout-icon">🧘</div>
+                <h3>ALONGAMENTO E RESPIRAÇÃO</h3>
+            </div>
+            <div class="workout-desc">Dias de descanso ou após treino pesado.</div>
+            <ul class="exercise-list">
+                <li>Respiração diafragmática - 5 minutos</li>
+                <li>Alongamento de quadril (postura de pombo) - 2x cada lado</li>
+                <li>Alongamento de posterior - 3x30s</li>
+                <li>Postura da criança - 3 minutos</li>
+                <li>Banho gelado ao final</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            ⚔️ REGRA DE OURO: Quando a vontade bater, faça 10 flexões AGORA. A vontade vai embora junto com o sangue indo pro músculo.
+        </div>
+        
+        <a href="index.html" class="back-link">← Voltar para página inicial</a>
+    </div>
+    
+    <div class="footer">
+        Todos os direitos reservados © GUERRA AO VÍCIO 2025
+    </div>
+</body>
+</html>
